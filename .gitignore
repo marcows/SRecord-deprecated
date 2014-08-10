@@ -1,0 +1,24 @@
+# SRecord files
+*.o
+*.lo
+/.mkdir.__*
+/.bin
+/Makefile
+/bin/
+/config.log
+/config.status
+/etc/BUILDING.pdf
+/etc/README.pdf
+/etc/change_log.pdf
+/etc/reference.pdf
+/libdir/pkgconfig/srecord.pc
+/man/cat1/
+/man/cat3/
+/man/cat5/
+/script/test_prelude.sh
+/srecord/.libs/
+/srecord/config.h
+/srecord/libsrecord.la
+
+# user files
+/tags
