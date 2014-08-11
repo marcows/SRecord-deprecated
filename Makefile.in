@@ -3710,6 +3710,9 @@ t0251a: all test/02/t0251a.sh
 t0253a: all test/02/t0253a.sh
 	PATH=`pwd`/bin:$$PATH $(SH) test/02/t0253a.sh
 
+t0254a: all test/02/t0254a.sh
+	PATH=`pwd`/bin:$$PATH $(SH) test/02/t0254a.sh
+
 test/arglex_ambiguous/main.lo test/arglex_ambiguous/main.o: srecord/arglex.h \
 		srecord/arglex/tool.h srecord/defcon.h srecord/endian.h \
 		srecord/format_printf.h srecord/input.h srecord/output.h \
@@ -4151,7 +4154,7 @@ test_files = t0001a t0002a t0003a t0004a t0005a t0006a t0007a t0008a t0009a \
 		t0206a t0207a t0209a t0210a t0211a t0212a t0213a t0215a t0216a \
 		t0217a t0218a t0219a t0220a t0221a t0222a t0223a t0225a t0227a \
 		t0228a t0229a t0230a t0231a t0232a t0233a t0235a t0236a t0237a \
-		t0238a t0239a t0250a t0251a t0253a
+		t0238a t0239a t0250a t0251a t0253a t0254a
 
 sure: $(test_files)
 	@echo Passed All Tests
@@ -4815,6 +4818,6 @@ uninstall:
 		t0207a t0209a t0210a t0211a t0212a t0213a t0215a t0216a t0217a \
 		t0218a t0219a t0220a t0221a t0222a t0223a t0225a t0227a t0228a \
 		t0229a t0230a t0231a t0232a t0233a t0235a t0236a t0237a t0238a \
-		t0239a t0250a t0251a t0253a the-default-target
+		t0239a t0250a t0251a t0253a t0254a the-default-target
 
 # vim: set ts=8 sw=8 noet :
