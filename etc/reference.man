@@ -125,6 +125,7 @@ with this program. If not, see <http://www.gnu.org/licenses/>.
 .if o .bp \" because .TH is going to throw another one
 .nr % 1000
 .TH "Table of Contents" "SRecord" "SRecord" "Reference Manual"
+.pdfbookmark 1 Table of Contents
 .\"
 .\"     -----
 .\" This next section redefines the page footer to use roman numbering

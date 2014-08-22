@@ -16,6 +16,7 @@
 .\" along with this program. If not, see <http://www.gnu.org/licenses/>.
 .\"
 .TH "Read Me" SRecord SRecord "Reference Manual"
+.pdfbookmark 1 The README file
 .so etc/version.so
 .hy 0
 .ad l
@@ -408,6 +409,7 @@ Peter Miller;E\[hy]Mail:;pmiller@opensource.org.au
 .TE
 .br
 .bp
+.pdfbookmark 1 Release Notes
 .SH RELEASE NOTES
 .XX "" "Release Notes"
 This section details the various features and bug fixes of the various
