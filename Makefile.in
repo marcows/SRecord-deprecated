@@ -285,9 +285,7 @@ etc/reference.pdf: etc/BUILDING.man etc/README.man etc/coding-style.so \
 		man/man5/srec_ti_tagged.5 man/man5/srec_ti_tagged_16.5 \
 		man/man5/srec_ti_txt.5 man/man5/srec_trs80.5 \
 		man/man5/srec_vmem.5 man/man5/srec_wilson.5
-	$(GROFF) -Tps -s -I. -t -man etc/reference.man > etc/reference.ps
-	ps2pdf etc/reference.ps $@
-	rm etc/reference.ps
+	$(GROFF) -Tpdf -s -t -mpdfmark -man etc/reference.man > $@
 
 $(datarootdir)/doc/srecord/reference.pdf: .mkdir.__datarootdir__doc_srecord \
 		etc/reference.pdf

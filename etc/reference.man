@@ -51,6 +51,11 @@
 .ds MO \\*[MONTH\n[mo]]
 .nr *year \n[yr]+1900
 .ds DY \n[dy] \*[MO] \n[*year]
+.\"
+.pdfinfo /Title SRecord Reference Manual
+.pdfinfo /Author Scott Finneran, Peter Miller
+.pdfinfo /Subject This document describes SRecord version \*(v)
+.pdfinfo /Keywords SRecord srec_cat srec_cmp srec_info
 .\" ---------------------------------------------------------------------------
 \&.
 .sp 2i
@@ -142,4 +147,5 @@ with this program. If not, see <http://www.gnu.org/licenses/>.
 .\"     -----
 .in 0
 .TC
+.pdfsync
 .\" vim: set ts=8 sw=4 et :
