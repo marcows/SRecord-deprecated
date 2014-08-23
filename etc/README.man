@@ -359,7 +359,11 @@ may be found in the
 file included in this distribution.
 .LP
 It is also possible to build \f[I]SRecord\fP on Windows using the
-Cygwin (www.cygwin.com) or DJGPP (www.delorie.com/djgpp) environments.
+Cygwin
+.pdfhref W -D http://www.cygwin.com/ -P ( -A ) -- www.cygwin.com
+or DJGPP
+.pdfhref W -D http://www.delorie.com/djgpp -P ( -A ) -- www.delorie.com/djgpp
+environments.
 Instructions are in the \f[I]BUILDING\fP file, including how to get native
 Windows binaries.
 .br
@@ -393,7 +397,8 @@ PURPOSE.
 See the GNU General Public License for more details.
 .PP
 You should have received a copy of the GNU General Public License along
-with this program. If not, see <http://www.gnu.org/licenses/>.
+with this program. If not, see
+.pdfhref W -P < -A >. -- http://www.gnu.org/licenses/
 .PP
 It should be in the
 .I LICENSE

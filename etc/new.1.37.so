@@ -28,7 +28,10 @@ and XMODEM calculations.
 .if t \(bu
 .\" Change 15
 A link has been added to the CRC16 man page section
-to the www.joegeluso.com/software/articles/ccitt.htm web page,
+to the
+.pdfhref W -D http://www.joegeluso.com/software/articles/ccitt.htm -- \
+www.joegeluso.com/software/articles/ccitt.htm
+web page,
 to explain the difficulties in seeding CRC16 calculations.
 .TP 2n
 .if n *

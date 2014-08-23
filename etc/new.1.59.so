@@ -22,7 +22,8 @@
 .\" Change 15
 There are now several additional CRC\[hy]16 polynomials,
 plus the ability to select a polynomial by name, rather than by
-value. See http://en.wikipedia.org/wiki/Cyclic_redundancy_check
+value. See
+.pdfhref W -- http://en.wikipedia.org/wiki/Cyclic_redundancy_check
 for a table of names and values.
 .\" ------------------------------------------------------------------------
 .\" Add new entries above this line.

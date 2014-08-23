@@ -40,20 +40,20 @@ You will need the C++ Boost Library.
 If you are using a package based system, you will need the
 libboost\[hy]devel package, or one named something very similar.
 .br
-http://boost.org/
+.pdfhref W -- http://boost.org/
 .TP 8n
 Libgcrypt Library
 You will need the GNU Crypt library.
 If you are using a package based system, you will need the
 libgcrypt\[hy]devel package, or one named something very similar.
 .br
-http://directory.fsf.org/wiki/Libgcrypt
+.pdfhref W -- http://directory.fsf.org/wiki/Libgcrypt
 .TP 8n
 GNU Libtool
 You will need the GNU Libtool software, used to build shared libraries
 on a variety of systems.
 .br
-http://www.gnu.org/software/libtool/
+.pdfhref W -- http://www.gnu.org/software/libtool/
 .TP 8n
 GNU Groff
 The documentation for the
@@ -68,7 +68,8 @@ You may also want to consider fetching and installing the GNU C Compiler
 if you have not done so already.  This is not essential.
 SRecord was developed using the GNU C++ compiler, and the GNU C++ libraries.
 .PP
-The GNU FTP archives may be found at \f[CW]ftp.gnu.org\fP,
+The GNU FTP archives may be found at
+.pdfhref W -D ftp://ftp.gnu.org -A , -- \f[CW]ftp.gnu.org\fP
 and are mirrored around the world.
 .br
 .ne 1i
@@ -370,8 +371,11 @@ using a newer version of
 .IR autoconf .
 .SS Windows NT
 It is possible to build SRecord on MS Windows platforms, using the Cygwin
-(see \f[CW]www.cygwin.com\fP) or DJGPP (see
-\f[CW]www.delorie.com/djgpp\fP) environments.  This provides the
+(see
+.pdfhref W -D http://www.cygwin.com/ -A ) -- \f[CW]www.cygwin.com\fP
+or DJGPP (see
+.pdfhref W -D http://www.delorie.com/djgpp -A ) -- \f[CW]www.delorie.com/djgpp\fP
+environments.  This provides the
 \&\[lq]porting layer\[rq] necessary to run Unix programs on Windows.  The build
 process is exactly as described above.
 .PP
@@ -484,7 +488,7 @@ srecord\[hy]users@lists.sourceforge.net
 .ft R
 .RE
 For information obout the srecord\[hy]users mailing list.
-http://srecord.sourceforge.net/mailing\[hy]list.html
+.pdfhref W -- http://srecord.sourceforge.net/mailing-list.html
 .PP
 When reporting problems,
 please include the version number

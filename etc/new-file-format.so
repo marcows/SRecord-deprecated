@@ -62,7 +62,9 @@ same directory for examples.
 .PP
 If you need to describe something as \[lq]stupid\[rq],
 as is all too often the case,
-use \f[CW]thesaurus.com\fP to find a synonym.
+use
+.pdfhref W -D http://thesaurus.com/ -- \f[CW]thesaurus.com\fP
+to find a synonym.
 Use the following command
 .RS
 \f[CW]find man/. \-type f | xargs grep \-i \fP\f[I]synonym\fP

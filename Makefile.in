@@ -381,7 +381,14 @@ $(mandir)/man1/srec_input.1: .mkdir.__mandir__man1 \
 		man/man1/srec_input.1 man/man1/z_copyright.so \
 		man/man1/z_options.so
 	$(SOELIM) -I. man/man1/srec_input.1 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man1/srec_input.1.tmp
 	$(INSTALL_DATA) man/man1/srec_input.1.tmp $@
 	@rm -f man/man1/srec_input.1.tmp
@@ -392,7 +399,14 @@ man/cat1/srec_license.1: man/man1/srec_license.1
 		$@
 
 $(mandir)/man1/srec_license.1: .mkdir.__mandir__man1 man/man1/srec_license.1
-	sed '/^[.]\(XX\|pdfbookmark\) ./d' < man/man1/srec_license.1 > \
+	sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+	    -e '/^\.pdfhref / {' \
+	    -e '	s/^\.pdfhref W//' \
+	    -e '	s/ -D [^ ]* / /' \
+	    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+	    -e '	s/ -P \([^ ]*\) /\1 /' \
+	    -e '	s/ -- //' \
+	    -e '}' < man/man1/srec_license.1 > \
 		man/man1/srec_license.1.tmp
 	$(INSTALL_DATA) man/man1/srec_license.1.tmp $@
 	@rm -f man/man1/srec_license.1.tmp
@@ -404,7 +418,14 @@ man/cat3/srecord.3: man/man1/z_copyright.so man/man3/srecord.3
 $(mandir)/man3/srecord.3: .mkdir.__mandir__man3 man/man1/z_copyright.so \
 		man/man3/srecord.3
 	$(SOELIM) -I. man/man3/srecord.3 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man3/srecord.3.tmp
 	$(INSTALL_DATA) man/man3/srecord.3.tmp $@
 	@rm -f man/man3/srecord.3.tmp
@@ -416,7 +437,14 @@ man/cat3/srecord_license.3: man/man3/srecord_license.3
 
 $(mandir)/man3/srecord_license.3: .mkdir.__mandir__man3 \
 		man/man3/srecord_license.3
-	sed '/^[.]\(XX\|pdfbookmark\) ./d' < man/man3/srecord_license.3 > \
+	sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+	    -e '/^\.pdfhref / {' \
+	    -e '	s/^\.pdfhref W//' \
+	    -e '	s/ -D [^ ]* / /' \
+	    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+	    -e '	s/ -P \([^ ]*\) /\1 /' \
+	    -e '	s/ -- //' \
+	    -e '}' < man/man3/srecord_license.3 > \
 		man/man3/srecord_license.3.tmp
 	$(INSTALL_DATA) man/man3/srecord_license.3.tmp $@
 	@rm -f man/man3/srecord_license.3.tmp
@@ -428,7 +456,14 @@ man/cat5/srec_aomf.5: man/man1/z_copyright.so man/man5/srec_aomf.5
 $(mandir)/man5/srec_aomf.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_aomf.5
 	$(SOELIM) -I. man/man5/srec_aomf.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_aomf.5.tmp
 	$(INSTALL_DATA) man/man5/srec_aomf.5.tmp $@
 	@rm -f man/man5/srec_aomf.5.tmp
@@ -467,7 +502,14 @@ man/cat5/srec_binary.5: man/man1/z_copyright.so man/man5/srec_binary.5
 $(mandir)/man5/srec_binary.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_binary.5
 	$(SOELIM) -I. man/man5/srec_binary.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_binary.5.tmp
 	$(INSTALL_DATA) man/man5/srec_binary.5.tmp $@
 	@rm -f man/man5/srec_binary.5.tmp
@@ -480,7 +522,14 @@ man/cat5/srec_brecord.5: man/man1/z_copyright.so man/man5/srec_brecord.5
 $(mandir)/man5/srec_brecord.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_brecord.5
 	$(SOELIM) -I. man/man5/srec_brecord.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_brecord.5.tmp
 	$(INSTALL_DATA) man/man5/srec_brecord.5.tmp $@
 	@rm -f man/man5/srec_brecord.5.tmp
@@ -492,7 +541,14 @@ man/cat5/srec_coe.5: man/man1/z_copyright.so man/man5/srec_coe.5
 $(mandir)/man5/srec_coe.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_coe.5
 	$(SOELIM) -I. man/man5/srec_coe.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_coe.5.tmp
 	$(INSTALL_DATA) man/man5/srec_coe.5.tmp $@
 	@rm -f man/man5/srec_coe.5.tmp
@@ -527,7 +583,14 @@ man/cat5/srec_emon52.5: man/man5/srec_emon52.5
 	GROFF_NO_SGR=-c $(GROFF) -I. -Tascii -t -man man/man5/srec_emon52.5 > $@
 
 $(mandir)/man5/srec_emon52.5: .mkdir.__mandir__man5 man/man5/srec_emon52.5
-	sed '/^[.]\(XX\|pdfbookmark\) ./d' < man/man5/srec_emon52.5 > \
+	sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+	    -e '/^\.pdfhref / {' \
+	    -e '	s/^\.pdfhref W//' \
+	    -e '	s/ -D [^ ]* / /' \
+	    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+	    -e '	s/ -P \([^ ]*\) /\1 /' \
+	    -e '	s/ -- //' \
+	    -e '}' < man/man5/srec_emon52.5 > \
 		man/man5/srec_emon52.5.tmp
 	$(INSTALL_DATA) man/man5/srec_emon52.5.tmp $@
 	@rm -f man/man5/srec_emon52.5.tmp
@@ -589,7 +652,14 @@ man/cat5/srec_fpc.5: man/man5/srec_fpc.5
 	GROFF_NO_SGR=-c $(GROFF) -I. -Tascii -t -man man/man5/srec_fpc.5 > $@
 
 $(mandir)/man5/srec_fpc.5: .mkdir.__mandir__man5 man/man5/srec_fpc.5
-	sed '/^[.]\(XX\|pdfbookmark\) ./d' < man/man5/srec_fpc.5 > \
+	sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+	    -e '/^\.pdfhref / {' \
+	    -e '	s/^\.pdfhref W//' \
+	    -e '	s/ -D [^ ]* / /' \
+	    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+	    -e '	s/ -P \([^ ]*\) /\1 /' \
+	    -e '	s/ -- //' \
+	    -e '}' < man/man5/srec_fpc.5 > \
 		man/man5/srec_fpc.5.tmp
 	$(INSTALL_DATA) man/man5/srec_fpc.5.tmp $@
 	@rm -f man/man5/srec_fpc.5.tmp
@@ -613,7 +683,14 @@ man/cat5/srec_intel.5: man/man1/z_copyright.so man/man5/srec_intel.5
 $(mandir)/man5/srec_intel.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_intel.5
 	$(SOELIM) -I. man/man5/srec_intel.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_intel.5.tmp
 	$(INSTALL_DATA) man/man5/srec_intel.5.tmp $@
 	@rm -f man/man5/srec_intel.5.tmp
@@ -639,7 +716,14 @@ man/cat5/srec_logisim.5: man/man1/z_copyright.so man/man5/srec_logisim.5
 $(mandir)/man5/srec_logisim.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_logisim.5
 	$(SOELIM) -I. man/man5/srec_logisim.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_logisim.5.tmp
 	$(INSTALL_DATA) man/man5/srec_logisim.5.tmp $@
 	@rm -f man/man5/srec_logisim.5.tmp
@@ -651,7 +735,14 @@ man/cat5/srec_mem.5: man/man1/z_copyright.so man/man5/srec_mem.5
 $(mandir)/man5/srec_mem.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_mem.5
 	$(SOELIM) -I. man/man5/srec_mem.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_mem.5.tmp
 	$(INSTALL_DATA) man/man5/srec_mem.5.tmp $@
 	@rm -f man/man5/srec_mem.5.tmp
@@ -663,7 +754,14 @@ man/cat5/srec_mif.5: man/man1/z_copyright.so man/man5/srec_mif.5
 $(mandir)/man5/srec_mif.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_mif.5
 	$(SOELIM) -I. man/man5/srec_mif.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_mif.5.tmp
 	$(INSTALL_DATA) man/man5/srec_mif.5.tmp $@
 	@rm -f man/man5/srec_mif.5.tmp
@@ -689,7 +787,14 @@ man/cat5/srec_mos_tech.5: man/man1/z_copyright.so man/man5/srec_mos_tech.5
 $(mandir)/man5/srec_mos_tech.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_mos_tech.5
 	$(SOELIM) -I. man/man5/srec_mos_tech.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_mos_tech.5.tmp
 	$(INSTALL_DATA) man/man5/srec_mos_tech.5.tmp $@
 	@rm -f man/man5/srec_mos_tech.5.tmp
@@ -714,7 +819,14 @@ man/cat5/srec_msbin.5: man/man1/z_copyright.so man/man5/srec_msbin.5
 $(mandir)/man5/srec_msbin.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_msbin.5
 	$(SOELIM) -I. man/man5/srec_msbin.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_msbin.5.tmp
 	$(INSTALL_DATA) man/man5/srec_msbin.5.tmp $@
 	@rm -f man/man5/srec_msbin.5.tmp
@@ -727,7 +839,14 @@ man/cat5/srec_needham.5: man/man1/z_copyright.so man/man5/srec_needham.5
 $(mandir)/man5/srec_needham.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_needham.5
 	$(SOELIM) -I. man/man5/srec_needham.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_needham.5.tmp
 	$(INSTALL_DATA) man/man5/srec_needham.5.tmp $@
 	@rm -f man/man5/srec_needham.5.tmp
@@ -751,7 +870,14 @@ man/cat5/srec_ppb.5: man/man1/z_copyright.so man/man5/srec_ppb.5
 $(mandir)/man5/srec_ppb.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_ppb.5
 	$(SOELIM) -I. man/man5/srec_ppb.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_ppb.5.tmp
 	$(INSTALL_DATA) man/man5/srec_ppb.5.tmp $@
 	@rm -f man/man5/srec_ppb.5.tmp
@@ -763,7 +889,14 @@ man/cat5/srec_ppx.5: man/man1/z_copyright.so man/man5/srec_ppx.5
 $(mandir)/man5/srec_ppx.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_ppx.5
 	$(SOELIM) -I. man/man5/srec_ppx.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_ppx.5.tmp
 	$(INSTALL_DATA) man/man5/srec_ppx.5.tmp $@
 	@rm -f man/man5/srec_ppx.5.tmp
@@ -774,7 +907,14 @@ man/cat5/srec_signetics.5: man/man5/srec_signetics.5
 		> $@
 
 $(mandir)/man5/srec_signetics.5: .mkdir.__mandir__man5 man/man5/srec_signetics.5
-	sed '/^[.]\(XX\|pdfbookmark\) ./d' < man/man5/srec_signetics.5 > \
+	sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+	    -e '/^\.pdfhref / {' \
+	    -e '	s/^\.pdfhref W//' \
+	    -e '	s/ -D [^ ]* / /' \
+	    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+	    -e '	s/ -P \([^ ]*\) /\1 /' \
+	    -e '	s/ -- //' \
+	    -e '}' < man/man5/srec_signetics.5 > \
 		man/man5/srec_signetics.5.tmp
 	$(INSTALL_DATA) man/man5/srec_signetics.5.tmp $@
 	@rm -f man/man5/srec_signetics.5.tmp
@@ -851,7 +991,14 @@ man/cat5/srec_ti_tagged.5: man/man1/z_copyright.so man/man5/srec_ti_tagged.5
 $(mandir)/man5/srec_ti_tagged.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_ti_tagged.5
 	$(SOELIM) -I. man/man5/srec_ti_tagged.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_ti_tagged.5.tmp
 	$(INSTALL_DATA) man/man5/srec_ti_tagged.5.tmp $@
 	@rm -f man/man5/srec_ti_tagged.5.tmp
@@ -865,7 +1012,14 @@ man/cat5/srec_ti_tagged_16.5: man/man1/z_copyright.so \
 $(mandir)/man5/srec_ti_tagged_16.5: .mkdir.__mandir__man5 \
 		man/man1/z_copyright.so man/man5/srec_ti_tagged_16.5
 	$(SOELIM) -I. man/man5/srec_ti_tagged_16.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_ti_tagged_16.5.tmp
 	$(INSTALL_DATA) man/man5/srec_ti_tagged_16.5.tmp $@
 	@rm -f man/man5/srec_ti_tagged_16.5.tmp
@@ -877,7 +1031,14 @@ man/cat5/srec_ti_txt.5: man/man1/z_copyright.so man/man5/srec_ti_txt.5
 $(mandir)/man5/srec_ti_txt.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_ti_txt.5
 	$(SOELIM) -I. man/man5/srec_ti_txt.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_ti_txt.5.tmp
 	$(INSTALL_DATA) man/man5/srec_ti_txt.5.tmp $@
 	@rm -f man/man5/srec_ti_txt.5.tmp
@@ -901,7 +1062,14 @@ man/cat5/srec_vmem.5: man/man1/z_copyright.so man/man5/srec_vmem.5
 $(mandir)/man5/srec_vmem.5: .mkdir.__mandir__man5 man/man1/z_copyright.so \
 		man/man5/srec_vmem.5
 	$(SOELIM) -I. man/man5/srec_vmem.5 | \
-		sed '/^[.]\(XX\|pdfbookmark\) ./d' > \
+		sed -e '/^[.]\(XX\|pdfbookmark\) ./d' \
+		    -e '/^\.pdfhref / {' \
+		    -e '	s/^\.pdfhref W//' \
+		    -e '	s/ -D [^ ]* / /' \
+		    -e '	s/\(.*\) -A \([^ ]*\) \(.*\)/\1 \3\2/' \
+		    -e '	s/ -P \([^ ]*\) /\1 /' \
+		    -e '	s/ -- //' \
+		    -e '}' > \
 		man/man5/srec_vmem.5.tmp
 	$(INSTALL_DATA) man/man5/srec_vmem.5.tmp $@
 	@rm -f man/man5/srec_vmem.5.tmp
