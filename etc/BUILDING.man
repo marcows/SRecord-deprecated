@@ -46,7 +46,7 @@ You will need the GNU Crypt library.
 If you are using a package based system, you will need the
 libgcrypt\[hy]devel package, or one named something very similar.
 .br
-http://directory.fsf.org/project/libgcrypt/
+http://directory.fsf.org/wiki/Libgcrypt
 .TP 8n
 GNU Libtool
 You will need the GNU Libtool software, used to build shared libraries
