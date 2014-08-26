@@ -1,11 +1,20 @@
+.ds PDFBOOKMARK.VIEW /FitH \\n
+.pdfbookmark 1 Manual pages(1) - Executable programs
+.ds PDFBOOKMARK.VIEW /FitH \\n[PDFPAGE.Y] u
 .so man/man1/srec_cat.1
 .so man/man1/srec_cmp.1
 .so man/man1/srec_examples.1
 .so man/man1/srec_info.1
 .so man/man1/srec_input.1
 .so man/man1/srec_license.1
+.ds PDFBOOKMARK.VIEW /FitH \\n
+.pdfbookmark 1 Manual pages(3) - Library calls
+.ds PDFBOOKMARK.VIEW /FitH \\n[PDFPAGE.Y] u
 .so man/man3/srecord.3
 .so man/man3/srecord_license.3
+.ds PDFBOOKMARK.VIEW /FitH \\n
+.pdfbookmark 1 Manual pages(5) - File formats
+.ds PDFBOOKMARK.VIEW /FitH \\n[PDFPAGE.Y] u
 .so man/man5/srec_aomf.5
 .so man/man5/srec_ascii_hex.5
 .so man/man5/srec_atmel_generic.5
