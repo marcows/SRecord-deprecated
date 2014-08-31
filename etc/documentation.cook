@@ -130,20 +130,7 @@ etc/%.pdf: etc/%.man etc/page-list.awk
         set silent;
 }
 
-cascade etc/reference.man = etc/ref-index.so etc/ref-parts.so;
-
-etc/ref-index.so: [match_mask man/man%1/%2.%1 [source_files]]
-        etc/ref-ptx1.awk etc/ref-ptx.ignore etc/ref-ptx2.awk
-{
-    function if_quiet Generate;
-
-    [awk] -f [resolve etc/ref-ptx1.awk]
-        [resolve [match_mask man/man%1/%2.%1 [source_files]]]
-    | ptx -O -r -w1000 -i[resolve etc/ref-ptx.ignore]
-    | sort -t'\'"\'' -f -d +5 -6 +3 -4
-    | [awk] -F'\'"\'' -f [resolve etc/ref-ptx2.awk]
-    > [target];
-}
+cascade etc/reference.man = etc/ref-parts.so;
 
 etc/ref-parts.so: [match_mask man/man%1/%2.%1 [source_files]]
         etc/ref-ptx.sh

@@ -256,7 +256,7 @@ etc/reference.pdf: etc/BUILDING.man etc/README.man etc/coding-style.so \
 		etc/new.1.58.so etc/new.1.59.so etc/new.1.6.so etc/new.1.60.so \
 		etc/new.1.61.so etc/new.1.62.so etc/new.1.63.so \
 		etc/new.1.64.so etc/new.1.7.so etc/new.1.8.so etc/new.1.9.so \
-		etc/new.so etc/version.so etc/ref-index.so etc/ref-parts.so \
+		etc/new.so etc/version.so etc/ref-parts.so \
 		etc/ref-toc.so etc/reference.man man/man1/o_at.so \
 		man/man1/o_ignore_checksums.so man/man1/o_input.so \
 		man/man1/o_multiple.so man/man1/o_sequence.so \
