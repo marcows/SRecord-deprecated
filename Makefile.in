@@ -400,7 +400,8 @@ man/cat3/srecord.3: man/man1/z_copyright.so man/man3/srecord.3
 
 $(mandir)/man3/srecord.3: .mkdir.__mandir__man3 man/man1/z_copyright.so \
 		man/man3/srecord.3
-	$(SOELIM) -I. man/man3/srecord.3 > man/man3/srecord.3.tmp
+	$(SOELIM) -I. man/man3/srecord.3 | sed '/^[.]XX ./d' > \
+		man/man3/srecord.3.tmp
 	$(INSTALL_DATA) man/man3/srecord.3.tmp $@
 	@rm -f man/man3/srecord.3.tmp
 
