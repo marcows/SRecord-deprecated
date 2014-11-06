@@ -56,6 +56,7 @@
 .pdfinfo /Author Scott Finneran, Peter Miller
 .pdfinfo /Subject This document describes SRecord version \*(v)
 .pdfinfo /Keywords SRecord srec_cat srec_cmp srec_info
+.pdfview /PageMode /UseOutlines
 .\" ---------------------------------------------------------------------------
 \&.
 .sp 2i
