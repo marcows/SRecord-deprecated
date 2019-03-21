@@ -49,9 +49,16 @@ srecord::input_file_ppb::create(const std::string &filename)
 bool
 srecord::input_file_ppb::get_packet(void)
 {
-    int c = get_char();
-    if (c < 0)
-        return false;
+    int c;
+
+    // skip ASCII prologue (if any)
+    do{
+        c = get_char();
+        if (c < 0)
+            return false;
+        if ((c == '\n') || (c == '\r'))
+            continue;
+    }while(c != 0x01 && c >= ' ' && c < 0x7f);
     if (c != 0x01)
         packet_format_error();
     unsigned char hdr[8];
