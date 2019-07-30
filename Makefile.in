@@ -1007,7 +1007,8 @@ srecord/arglex/tool/input.lo srecord/arglex/tool/input.o: srecord/adler16.h \
 		srecord/input/file/fairchild.h srecord/input/file/fastload.h \
 		srecord/input/file/formatted_binary.h \
 		srecord/input/file/four_packed_code.h \
-		srecord/input/file/hexdump.h srecord/input/file/idt.h \
+		srecord/input/file/hexdump.h \
+		srecord/input/file/hp64k.h srecord/input/file/idt.h \
 		srecord/input/file/intel.h srecord/input/file/intel16.h \
 		srecord/input/file/logisim.h srecord/input/file/mif.h \
 		srecord/input/file/mips_flash.h srecord/input/file/mos_tech.h \
@@ -1360,6 +1361,7 @@ srecord/input/file/guess.lo srecord/input/file/guess.o: srecord/arglex.h \
 		srecord/input/file/formatted_binary.h \
 		srecord/input/file/four_packed_code.h \
 		srecord/input/file/guess.cc srecord/input/file/hexdump.h \
+		srecord/input/file/hp64k.h \
 		srecord/input/file/idt.h srecord/input/file/intel.h \
 		srecord/input/file/intel16.h srecord/input/file/logisim.h \
 		srecord/input/file/mif.h srecord/input/file/mips_flash.h \
@@ -1385,6 +1387,16 @@ srecord/input/file/hexdump.lo srecord/input/file/hexdump.o: srecord/arglex.h \
 	$(LIBTOOL) --mode=compile --tag=CXX $(CXX) $(CPPFLAGS) $(CXXFLAGS) -I. \
 		-c srecord/input/file/hexdump.cc -o \
 		srecord/input/file/hexdump.lo
+
+srecord/input/file/hp64k.lo srecord/input/file/hp64k.o: srecord/arglex.h \
+		srecord/arglex/tool.h srecord/defcon.h srecord/endian.h \
+		srecord/format_printf.h srecord/input.h srecord/input/file.h \
+		srecord/input/file/hp64k.cc srecord/input/file/hp64k.h \
+		srecord/output.h srecord/record.h
+	$(LIBTOOL) --mode=compile --tag=CXX $(CXX) $(CPPFLAGS) $(CXXFLAGS) -I. \
+		-c srecord/input/file/hp64k.cc -o \
+		srecord/input/file/hp64k.lo
+
 
 srecord/input/file/idt.lo srecord/input/file/idt.o: srecord/arglex.h \
 		srecord/arglex/tool.h srecord/defcon.h srecord/endian.h \
@@ -3768,6 +3780,7 @@ srecord_obj = srecord/adler16.lo srecord/adler32.lo srecord/arglex.lo \
 		srecord/input/file/formatted_binary.lo \
 		srecord/input/file/four_packed_code.lo \
 		srecord/input/file/guess.lo srecord/input/file/hexdump.lo \
+		srecord/input/file/hp64k.lo \
 		srecord/input/file/idt.lo srecord/input/file/intel.lo \
 		srecord/input/file/intel16.lo srecord/input/file/logisim.lo \
 		srecord/input/file/mif.lo srecord/input/file/mips_flash.lo \
@@ -4249,7 +4262,9 @@ clean-obj:
 	rm -f srecord/input/file/four_packed_code.lo
 	rm -f srecord/input/file/four_packed_code.o srecord/input/file/guess.lo
 	rm -f srecord/input/file/guess.o srecord/input/file/hexdump.lo
-	rm -f srecord/input/file/hexdump.o srecord/input/file/idt.lo
+	rm -f srecord/input/file/hexdump.o
+	rm -f srecord/input/file/hp64k.lo srecord/input/file/hp64k.o
+	rm -f srecord/input/file/idt.lo
 	rm -f srecord/input/file/idt.o srecord/input/file/intel.lo
 	rm -f srecord/input/file/intel.o srecord/input/file/intel16.lo
 	rm -f srecord/input/file/intel16.o srecord/input/file/logisim.lo
